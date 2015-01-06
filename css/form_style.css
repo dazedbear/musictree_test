@@ -1,10 +1,28 @@
 @import url(resetcss.css);  /* 消除各瀏覽器預設css定義 */
-@import url(http://fonts.googleapis.com/css?family=Nunito); /* 引用Google Fonts 字型 */
+@import url(http://fonts.googleapis.com/css?family=Nunito); /* 引用Google Fonts 字型: Nunito */
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans); /* 引用Google Fonts 字型: Noto Sans */
 
+/*******************
+      全體設定
+*******************/
 
-a, p, h2{
-    font-family: Nunito;
+a, p, h2, h4{
+    font-family: "Noto Sans","Nunito","微軟正黑體", "Microsoft JhengHei",serif;
 }
+p{
+    font-size: 14px;
+    line-height: 16px;
+}
+h2{
+    font-size: 32px;
+    line-height: 45px;
+    vertical-align: middle;
+}
+
+/*******************
+    ALBUM FORM
+*******************/
+
 
 /* ALBUMS 字樣 */
 .album_form h2{
@@ -107,3 +125,167 @@ a, p, h2{
     from {box-shadow: 0px 0px 3px 3px #f4f4f4;}
     to {box-shadow: 0px 0px 3px 3px #858585;}
 }
+
+
+/*******************
+    ALBUM detail
+*******************/
+
+/*  黑背景 */
+.wrapper{
+    background: #111;
+    height: 100%;
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: 0.8;
+}
+/*  中央 專輯詳細資料 */
+.wrapper .album_detail{
+    background: #f4f4f4;
+    height: 100%;
+    width:700px;
+    margin: 0 auto;
+    box-shadow: 0 0 5px 10px #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+/*  專輯詳細資料  上半部 (album_image, album_info detail_intro) */
+.wrapper .album_detail .detail_top{
+    width:100%;
+    padding: 15px;
+    position: relative;
+}
+/*  專輯詳細資料  上半部 > 專輯基本資料 (左邊圖+表) */
+.wrapper .album_detail .detail_top .album_info{
+/*    background: #f81133;*/
+    width:183px;
+    float: left;
+    margin: 0 15px 0 0;
+}
+/*  專輯詳細資料  上半部 > 專輯圖 */
+.wrapper .album_detail .detail_top .album_info .album_image{
+    background: #fff;
+    border: 4px solid #BCBCBC;
+    width:175px;
+    height:175px;
+    float: left;
+}
+/*  專輯詳細資料  上半部 > 基本資料表 */
+.wrapper .album_detail .detail_top .album_info ul{
+    /*background: #ffff46;*/
+    margin: 10px;
+    float: left;
+}
+.wrapper .album_detail .detail_top .album_info ul li p{
+    display: inline-block;
+    font-size: 15px;
+}
+/*  專輯詳細資料  上半部 > 專輯簡介 */
+.wrapper .album_detail .detail_top .detail_intro{
+/*    background: #ff4fdd;*/
+    width:445px;
+    float: left;
+    padding: 15px;
+}
+
+/*  專輯詳細資料  中部 (歌單) */
+.wrapper .album_detail .detail_songs{
+    width:670px;
+    float: left;
+    padding: 15px;
+}
+/* 歌單表格 */
+.wrapper .album_detail .detail_songs .songs_list{
+    width:500px;
+    margin: 0 auto;
+}
+/* 歌單表格文字 */
+.wrapper .album_detail .detail_songs .songs_list p, h4{
+    line-height: 30px;
+}
+/* 歌單標題 */
+.wrapper .album_detail .detail_songs .songs_list tr:first-child{
+    border: 1.5px solid #222;
+    background: #222;
+    color: #f4f4f4;
+}
+/* 歌單各首歌 */
+.wrapper .album_detail .detail_songs .songs_list tr{
+    border: 1.5px solid #222;
+    height: 30px;
+}
+/* 歌單各首歌 - 編號 */
+.wrapper .album_detail .detail_songs .songs_list tr td:first-child{
+    width:30px;
+    text-align: center;
+}
+/* 歌單各首歌 - 歌名 */
+.wrapper .album_detail .detail_songs .songs_list tr .songs_name{
+    width:350px;
+}
+/* 歌單各首歌 - 歌曲長度 */
+.wrapper .album_detail .detail_songs .songs_list tr .songs_length{
+    text-align: center;
+}
+/* 歌單各首歌 - 播放區 */
+.wrapper .album_detail .detail_songs .songs_list tr .play_button{
+    width:30px;
+    background: url(play.png);
+    text-align: center;
+}
+/* 歌單各首歌 - 星號標記 */
+.wrapper .album_detail .detail_songs .songs_list tr .star{
+    width:30px;
+    text-align: center;
+    background: url(star.png);
+}
+
+
+/*  專輯詳細資料  下部 (評分) */
+.wrapper .album_detail .detail_score{
+    width:670px;
+/*    background: #56ff00;*/
+    float: left;
+    padding: 15px;
+}
+/* 專輯評分 - 燈號 */
+.wrapper .album_detail .detail_score .finish_light{
+    text-align: center;
+}
+/* 兩個燈號 */
+.wrapper .album_detail .detail_score .finish_light li{
+    display: inline-block; 
+    margin: 0 30px 0 0;
+    text-align: center;
+}
+/* 兩個燈號區大小 */
+#listen_complete, #score_complete{
+    width:170px;
+}
+/* 指示燈 */
+.finish_light li p, .finish_light li img{
+    float: left;
+    line-height: 30px;
+}
+
+
+/* 專輯評分 - 旋鈕 */
+.wrapper .album_detail .detail_score .score_knobs{
+    text-align: center;
+    clear: both;
+}
+/* 兩個旋鈕 */
+.wrapper .album_detail .detail_score .score_knobs li{
+    display: inline-block; 
+    margin: 0 10px 0 0;
+}
+/* 兩個燈號區大小 */
+#favorite_score, #musicworth_score{
+    width:155px;
+    padding: 15px;
+}
+
+
+
