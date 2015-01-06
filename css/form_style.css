@@ -1,0 +1,109 @@
+@import url(resetcss.css);  /* 消除各瀏覽器預設css定義 */
+@import url(http://fonts.googleapis.com/css?family=Nunito); /* 引用Google Fonts 字型 */
+
+
+a, p, h2{
+    font-family: Nunito;
+}
+
+/* ALBUMS 字樣 */
+.album_form h2{
+    font-size: 28px;
+}
+
+/* 隱藏album_form表單 */
+.album_form_off{
+    position:absolute;
+    opacity: 0;
+    z-index: 1;
+}
+
+/* 顯示album_form表單 */
+.album_form{
+    opacity: 1;
+    position:absolute;
+    top:320px;
+    left:350px;
+    width:400px;
+
+    /* 淡出轉場 */
+    transition: all 0.25s ease-out 0s;
+}
+
+/* 專輯清單框框 */
+.album_form .album_list{
+    background: url(border_lr.png) repeat-y, url(border_t.png) no-repeat top, url(border_b.png) no-repeat bottom;
+    background-color: #f4f4f4;
+    padding: 15px;
+}
+
+/* 每張專輯 */
+.album_form .album_list li{
+    width: 75px;
+    margin:5px;
+    display: inline-block;
+    text-align: center;
+    
+}
+
+/* 完成度未達100% 的專輯 */
+.album_form .album_list .album_normal{
+    width: 75px;
+    height: 75px;
+    background: #ffffff;
+}
+
+/* 完成度未達100% 的專輯  選取特效 */
+.album_form .album_list .album_normal:hover{
+    -webkit-animation: shadowblink2 0.5s ease-out 0s infinite alternate;
+    -moz-animation: shadowblink2 0.5s ease-out 0s infinite alternate;
+    -o-animation: shadowblink2 0.5s ease-out 0s infinite alternate;
+}
+
+/* 完成度達100% 的專輯 */
+.album_form .album_list .album_fin{
+    width: 75px;
+    height: 75px;
+    background: #444444;
+    
+    /* 發光特效 */
+    -webkit-animation: shadowblink1 0.5s ease-out 0s infinite alternate;
+    -moz-animation: shadowblink1 0.5s ease-out 0s infinite alternate;
+    -o-animation: shadowblink1 0.5s ease-out 0s infinite alternate;
+}
+
+/* 完成度達100% 的專輯  選取特效 */
+.album_form .album_list .album_fin:hover{
+    -webkit-animation: shadowblink2 0.5s ease-out 0s infinite alternate;
+    -moz-animation: shadowblink2 0.5s ease-out 0s infinite alternate;
+    -o-animation: shadowblink2 0.5s ease-out 0s infinite alternate;
+}
+
+
+
+/*  動畫區  */
+/* [語法]  animation: name duration timing-function delay iteration-count direction; */
+/* [NOTE]  用縮寫時只可同時使用1個動畫,後面的蓋掉前面的 */
+/*         前綴: -webkit- chorme & safari */
+/*              -moz- firefox */
+/*              -o- opera */
+
+/* 完成的專輯 發光特效 shadowblink1 */
+@-webkit-keyframes shadowblink1{
+    from {box-shadow: 0px 0px 3px 2.5px #fad80f;}
+    to {box-shadow: 0px 0px 10px 4px #fdd80f;}
+}
+@-moz-keyframes shadowblink1{
+    from {box-shadow: 0px 0px 3px 3px #fad80f;}
+    to {box-shadow: 0px 0px 10px 4px #fdd80f;}
+}
+
+/* 專輯選取特效 shadowblink2 */
+@-webkit-keyframes shadowblink2{
+    from {box-shadow: 0px 0px 3px 3px #f4f4f4;}
+    to {box-shadow: 0px 0px 3px 3px #858585;}
+}
+@-moz-keyframes shadowblink2{
+    from {box-shadow: 0px 0px 3px 3px #f4f4f4;}
+    to {box-shadow: 0px 0px 3px 3px #858585;}
+}
