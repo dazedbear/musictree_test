@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://www.youtube.com/iframe_api"></script> 
+    <script src="js/jquery.min.js"></script>
+    <script src="js/youtube_play.js"></script>
+    <style>
+        /* 歌單各首歌 - 播放區 */
+        .play_button{
+            width:30px;
+            height: 30px;
+            background: url(css/play.png);
+            text-align: center;
+        }
+    </style>
+    <script>
+
+        var videoID;
+        /* 輸入youtube ID  */
+              $("#change").click(function(){
+            videoID = $("#url").val();
+                  alert("videoID changed!");
+                });
+    </script>
+    </head>
+<body>
+    <div id="player"></div>
+    <div class="play_button">
+		<input id="y2bID" value="tSwgWl63qeM" style="display:none;"/>
+	</div>
+	<div class="play_button">
+		<input id="y2bID" value="thHaK4l7eKg" style="display:none;"/>
+	</div>
+	<div class="play_button">
+		<input id="y2bID" value="NLCbxUO7Opg" style="display:none;"/>
+	</div>
+    <input id="url" value="input youtube id" />
+    <input type="button" id="change" value="change" />
+    
+</body>
+</html>
